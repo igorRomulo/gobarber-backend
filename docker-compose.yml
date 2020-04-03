@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+
+  db:
+    container_name: database
+    image: postgres
+    restart: always
+    environment: {
+      POSTGRES_USER: "postgres",
+      POSTGRES_PASSWORD: "docker"
+    }
+    ports:
+      - 5432:54532
+
+  redis:
+    container_name: redisbarber
+    image: "redis:alpine"
+    ports:
+      - 6379:6379
+
+  mongo:
+    container_name: mongobarber
+    image: mongo
+    ports:
+      - 27017:27017
+
